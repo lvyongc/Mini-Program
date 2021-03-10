@@ -1,0 +1,19 @@
+<view class="tabs">
+  <view class="tabs_title">
+  <!--子向父传递事件bindtap，传递参数data-index -->
+    <view
+    wx:for="{{tabs}}"
+    wx:key="id"
+    class="title_item  {{item.isActive?'active':''}} "
+    bindtap="handleItemTap"
+    data-index="{{index}}"
+    >
+
+    {{item.value}}
+  </view>
+  </view>
+  <view class="tabs_content">
+    <!-- 插槽 -->
+    <slot></slot>
+  </view>
+</view>
